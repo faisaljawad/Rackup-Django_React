@@ -1,7 +1,11 @@
+from django.contrib.auth.base_user import AbstractBaseUser
+from django.contrib.auth.models import PermissionsMixin
 from django.db import models
 from django.db.models import CASCADE
+from django.utils import timezone
 
 from packages.models import Package
+from user.manager import CustomUserManager
 
 
 class Certification(models.Model):
@@ -20,14 +24,21 @@ class Skill(models.Model):
         return self.name
 
 
-class User(models.Model):
-    id = models.IntegerField(primary_key=True)
-    name = models.CharField(max_length=50)
-    dob = models.DateTimeField()
-    is_active = models.BooleanField()
+class CustomUser(AbstractBaseUser, PermissionsMixin):
+    username = models.CharField(max_length=100, unique=True)
+    email = models.EmailField(unique=True, help_text='This is an email field')
+    first_name = models.CharField(max_length=50, null=True, blank=True)
+    last_name = models.CharField(max_length=50, null=True, blank=True)
+    is_staff = models.BooleanField(default=False)
+    is_superuser = models.BooleanField(default=False)
+    date_joined = models.DateTimeField(default=timezone.now)
+    is_active = models.BooleanField(default=True)
 
-    def __str__(self):
-        return self.name
+    objects = CustomUserManager()
+
+    USERNAME_FIELD = 'username'
+    EMAIL_FIELD = 'email'
+    REQUIRED_FIELDS = ['email']
 
 
 class Review(models.Model):
@@ -39,13 +50,14 @@ class Review(models.Model):
 
 
 class Profile(models.Model):
-    age = models.IntegerField()
+    DateOfBirth = models.DateField(default=None, null=True, blank=True)
     hourly_rate = models.IntegerField()
     location = models.CharField(max_length=50)
     description = models.CharField(max_length=250)
-    user = models.OneToOneField(User, on_delete=CASCADE)
+
+    user = models.OneToOneField(CustomUser, on_delete=CASCADE)
     certifications = models.ForeignKey(Certification, on_delete=CASCADE)
-    skills = models.ForeignKey(Skill, on_delete=CASCADE)
+    skills = models.ManyToManyField(Skill)
     reviews = models.ForeignKey(Review, on_delete=CASCADE)
     package = models.OneToOneField(Package, on_delete=CASCADE)
 

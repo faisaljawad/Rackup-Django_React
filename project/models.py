@@ -7,8 +7,10 @@ class Project(models.Model):
     id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=700)
-    employer = models.OneToOneField(Profile, on_delete=CASCADE)
+    employer = models.OneToOneField(Profile, on_delete=CASCADE, related_name='Employeer')
     skills_required = models.ForeignKey(Skill, on_delete=CASCADE)
+
+    employee = models.ManyToManyField(Profile, related_name='FreeLancer')
 
     def __str__(self):
         return self.name

@@ -26,8 +26,6 @@ SECRET_KEY = 'ifv-+@+7qf%=7+d@y10bb33+2euiwi+cpbau-dzw@=*9fp0@0='
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -51,6 +49,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+AUTH_USER_MODEL = 'user.CustomUser'
 
 ROOT_URLCONF = 'Rackup.urls'
 
