@@ -41,28 +41,30 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = ['email']
 
 
-class Review(models.Model):
-    comment = models.CharField(max_length=200, null=True)
-    rating = models.IntegerField()
-
-    def __str__(self):
-        return self.comment
-
-
 class Profile(models.Model):
     DateOfBirth = models.DateField(default=None, null=True, blank=True)
     hourly_rate = models.IntegerField()
     location = models.CharField(max_length=50)
     description = models.CharField(max_length=250)
 
-    user = models.OneToOneField(CustomUser, on_delete=CASCADE)
-    certifications = models.ForeignKey(Certification, on_delete=CASCADE)
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
+    certifications = models.ManyToManyField(Certification)
     skills = models.ManyToManyField(Skill)
-    reviews = models.ForeignKey(Review, on_delete=CASCADE)
     package = models.OneToOneField(Package, on_delete=CASCADE)
 
     def __str__(self):
         return self.description
+
+
+class Review(models.Model):
+    comment = models.CharField(max_length=200, null=True)
+    rating = models.IntegerField()
+
+    EmployeeProfile = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='receiver of the review+')
+    EmployerProfile = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='provider of the review+')
+
+    def __str__(self):
+        return self.comment
 
 
 class Account(models.Model):
