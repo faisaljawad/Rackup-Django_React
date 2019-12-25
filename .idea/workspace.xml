@@ -2,20 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b08f8284-dc24-4205-a1c3-0217f5805f2a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/packages/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/migrations/0002_auto_20191225_1805.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/Rackup.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Rackup.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rackup/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Rackup/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rackup/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Rackup/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/packages/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/packages/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/project/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +67,30 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="Rackup" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\ProgramData\Anaconda3\envs\AWP_MIDTERM\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
       <list>
@@ -90,6 +117,12 @@
       <workItem from="1577208326382" duration="1247000" />
       <workItem from="1577219109277" duration="292000" />
       <workItem from="1577255105667" duration="3529000" />
+      <workItem from="1577277673508" duration="463000" />
+      <workItem from="1577278153106" duration="19000" />
+      <workItem from="1577278189192" duration="259000" />
+      <workItem from="1577278475880" duration="238000" />
+      <workItem from="1577278729016" duration="4363000" />
+      <workItem from="1577286911346" duration="4776000" />
     </task>
     <servers />
   </component>
@@ -100,30 +133,54 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="256" y="89" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577219126375">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="246" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577287012388">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="246" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1577209067567" />
+    <state x="246" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1577287012388" />
     <state x="256" y="89" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1577219126375" />
-    <state x="531" y="181" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1577258677061">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="510" y="173" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1577278697389">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="510" y="173" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1577209572713" />
+    <state x="510" y="173" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1577278697389" />
     <state x="531" y="181" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1600.860@0.0.1600.860" timestamp="1577258677061" />
+    <state x="563" y="185" key="FileChooserDialogImpl" timestamp="1577278408493">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="563" y="185" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1577278408493" />
     <state x="566" y="310" key="Github.CreatePullRequestDialog" timestamp="1577197767603">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="566" y="310" key="Github.CreatePullRequestDialog/0.0.1600.860@0.0.1600.860" timestamp="1577197767603" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1577287085519">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1577287085519" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1577287085519">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1577287085519" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1577287085519">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1577287085519" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1577287085519">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1577287085519" />
     <state width="189" height="438" key="HiddenNamespacesPopup" timestamp="1577209450604">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="189" height="438" key="HiddenNamespacesPopup/0.0.1536.824@0.0.1536.824" timestamp="1577209450604" />
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1600.860@0.0.1600.860" timestamp="1577205552795" />
-    <state x="304" y="76" key="SettingsEditor" timestamp="1577219280484">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="292" y="73" key="SettingsEditor" timestamp="1577279037092">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="292" y="73" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1577208554509" />
+    <state x="292" y="73" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1577279037092" />
     <state x="304" y="76" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1577219280484" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1577294464830">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1577294464830" />
     <state x="508" y="259" key="com.intellij.ide.util.TipDialog" timestamp="1577255112701">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -132,5 +189,8 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="572" y="311" key="git4idea.rebase.GitRebaseDialog/0.0.1600.860@0.0.1600.860" timestamp="1577197731130" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Rackup_Django_React$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1577287041961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>
